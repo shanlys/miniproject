@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2c325d; /* Background color */
+            color: rgb(13, 12, 12); /* Text color */
+            height: 100vh; /* Ensure full viewport height */
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .sidebar {
+            background-color: #2c325d; /* Sidebar background color */
+            color: white; /* Text color */
+            padding: 20px;
+            width: 250px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px; /* Add margin at the bottom of the sidebar */
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px; /* Responsive padding */
+            margin-bottom: 5px; /* Responsive margin */
+            background-color: transparent;
+            border: none; /* Remove default border */
+            border-radius: 25px; /* Smoothen button curves */
+            transition: background-color 0.3s; /* Smooth transition */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow */
+        }
+
+        .sidebar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+        }
+
+        .sidebar ul li a span {
+            position: relative;
+            z-index: 3;
+        }
+
+        .profile-picture {
+            margin-top: auto; /* Align the profile picture to the bottom */
+            text-align: left; /* Align the profile picture to the left */
+            margin-left: 20px; /* Adjust margin as needed */
+            margin-bottom: 20px; /* Add margin at the bottom of the profile picture */
+        }
+
+        .profile-picture img {
+            width: 150px; /* Adjust size as needed */
+            height: 150px; /* Adjust size as needed */
+            border-radius: 50%; /* Make the image circular */
+            border: 5px solid #fff; /* Add a border */
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f1f7fe; /* Main content area background color */
+        }
+
+        /* Partition */
+        .partition {
+            width: 1px;
+            background-color: #ccc; /* Color of the partition */
+        }
+
+        .sign-out {
+            text-align: center;
+            margin-top: auto; /* Align at the bottom */
+            padding-bottom: 20px; /* Add space below */
+        }
+
+        .sign-out button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sign-out button:hover {
+            background-color: white;
+            color: #2c325d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#"><span>Home</span></a></li>
+                <li><a href="#"><span>Company</span></a></li>
+                <li><a href="#"><span>Applied</span></a></li>
+                <li><a href="#"><span>Student</span></a></li>
+                <li><a href="#"><span>Placed</span></a></li>
+                <li><a href="#"><span>Profile</span></a></li>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+
+                <li class="sign-out"><button>Sign Out</button></li> <!-- Sign Out button -->
+            </ul>
+        </div>
+        <div class="partition"></div> <!-- Partition -->
+        <div class="main-content">
+            <div class="profile-picture">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            </div>
+            <h1>Welcome Admin!</h1>
+            <!-- Add more content here -->
+        </div>
+    </div>
+</body>
+</html>
