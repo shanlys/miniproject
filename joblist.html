@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dde5f4; /* Light blue background */
+        }
+        header {
+            background-color: #182848; /* Dark blue header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .filter-section, .job-listings {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.1); /* Blue shadow */
+        }
+        .filter-section h2, .job-listings h2 {
+            color: #182848; /* Dark blue heading */
+        }
+        .filter-section form, .job-listings table {
+            width: 100%;
+        }
+        .filter-section form label, .filter-section form select, .filter-section form button, .filter-section form input {
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .filter-section form label {
+            width: 100px;
+        }
+        .filter-section form select, .filter-section form input {
+            width: calc(33% - 120px);
+            padding: 10px;
+            margin-right: 20px;
+        }
+        .filter-section form button {
+            padding: 10px 20px;
+            background-color: #182848; /* Dark blue button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .filter-section form button:hover {
+            background-color: #4a69bd; /* Slightly lighter blue */
+        }
+        .job-listings table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .job-listings th, .job-listings td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        .job-listings th {
+            background-color: #182848; /* Dark blue table header */
+            color: #fff;
+        }
+        .job-listings td button {
+            padding: 5px 10px;
+            background-color: #182848; /* Dark blue apply button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .job-listings td button:hover {
+            background-color: #4a69bd; /* Slightly lighter blue */
+        }
+        footer {
+            background-color: #182848; /* Dark blue footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Job Listings</h1>
+    </header>
+    <div class="container">
+        <section class="filter-section">
+            <h2>Filter Jobs</h2>
+            <form id="filterForm">
+                <label for="industry">Industry:</label>
+                <select id="industry" name="industry">
+                    <option value="">All Industries</option>
+                    <option value="tech">Tech</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                </select>
+
+                <label for="location">Location:</label>
+                <select id="location" name="location">
+                    <option value="">All Locations</option>
+                    <option value="ny">New York, NY</option>
+                    <option value="sf">San Francisco, CA</option>
+                    <option value="la">Los Angeles, CA</option>
+                </select>
+
+                <label for="job-type">Job Type:</label>
+                <select id="job-type" name="job-type">
+                    <option value="">All Job Types</option>
+                    <option value="full-time">Full-Time</option>
+                    <option value="part-time">Part-Time</option>
+                    <option value="internship">Internship</option>
+                </select>
+
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" placeholder="e.g., Java, Excel">
+
+                <label for="cgpa">CGPA:</label>
+                <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" placeholder="e.g., 7.5">
+
+                <button type="button" onclick="filterJobs()">Filter</button>
+            </form>
+        </section>
+        <section class="job-listings">
+            <h2>Available Jobs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Industry</th>
+                        <th>Location</th>
+                        <th>Job Type</th>
+                        <th>Skills</th>
+                        <th>CGPA</th>
+                        <th>Apply</th>
+                    </tr>
+                </thead>
+                <tbody id="jobsTable">
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>Tech Corp</td>
+                        <td>Tech</td>
+                        <td>New York, NY</td>
+                        <td>Full-Time</td>
+                        <td>Java, Python</td>
+                        <td>7.0</td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                    <tr>
+                        <td>Data Analyst</td>
+                        <td>Data Inc</td>
+                        <td>Finance</td>
+                        <td>San Francisco, CA</td>
+                        <td>Full-Time</td>
+                        <td>Excel, SQL</td>
+                        <td>6.5</td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                    <tr>
+                        <td>Nurse</td>
+                        <td>HealthCare Co</td>
+                        <td>Healthcare</td>
+                        <td>Los Angeles, CA</td>
+                        <td>Part-Time</td>
+                        <td>Patient Care</td>
+                        <td>8.0</td>
+                        <td><button type="button">Apply</button></td>
+                    </tr>
+                    <!-- Add more job listings here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; HireLing. All rights reserved.</p>
+    </footer>
+    <script>
+        function filterJobs() {
+            var industry = document.getElementById('industry').value;
+            var location = document.getElementById('location').value;
+            var jobType = document.getElementById('job-type').value;
+            var skills = document.getElementById('skills').value.toLowerCase();
+            var cgpa = parseFloat(document.getElementById('cgpa').value);
+
+            var table = document.getElementById('jobsTable');
+            var rows = table.getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+                var industryCell = rows[i].getElementsByTagName('td')[2];
+                var locationCell = rows[i].getElementsByTagName('td')[3];
+                var jobTypeCell = rows[i].getElementsByTagName('td')[4];
+                var skillsCell = rows[i].getElementsByTagName('td')[5];
+                var cgpaCell = rows[i].getElementsByTagName('td')[6];
+
+                var showRow = true;
+
+                if (industry && industry !== industryCell.textContent) {
+                    showRow = false;
+                }
+                if (location && location !== locationCell.textContent) {
+                    showRow = false;
+                }
+                if (jobType && jobType !== jobTypeCell.textContent) {
+                    showRow = false;
+                }
+                if (skills && !skillsCell.textContent.toLowerCase().includes(skills)) {
+                    showRow = false;
+                }
+                if (!isNaN(cgpa) && cgpa > parseFloat(cgpaCell.textContent)) {
+                    showRow = false;
+                }
+
+                rows[i].style.display = showRow ? '' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

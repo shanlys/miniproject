@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dde5f4; /* Light blue background */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        header {
+            background-color: #182848; /* Dark blue header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #3e4684; /* Dark blue navigation bar */
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #2c325d; /* Darker blue for active link */
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.1); /* Blue shadow */
+        }
+        .section h2 {
+            color: #182848; /* Dark blue heading */
+            margin-bottom: 10px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9; /* Light grey background for list items */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.1); /* Blue shadow */
+        }
+        .section input, .section textarea, .section select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .section button {
+            background-color: #182848; /* Dark blue button */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .section button:hover {
+            background-color: #2c325d; /* Darker blue for button hover */
+        }
+        .jobs table, .students table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .jobs th, .jobs td, .students th, .students td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        .students-list, .shortlisted-list {
+            max-height: 150px; /* Set a fixed height for visibility */
+            overflow-y: auto; /* Enable vertical scrolling */
+            margin: 0;
+            padding: 0;
+        }
+        footer {
+            background-color: #182848; /* Dark blue footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employer Dashboard</h1>
+    </header>
+    <nav>
+        <a href="#account">Account</a>
+        <a href="#post-job">Post Job</a>
+        <a href="#student-profiles">View Student Profiles</a>
+        <a href="#shortlist">Shortlist Candidates</a>
+        <a href="#schedule-interviews">Schedule Interviews</a>
+    </nav>
+    <div class="container">
+        <section id="account" class="section">
+            <h2>Create Account</h2>
+            <form>
+                <label for="company-name">Company Name:</label>
+                <input type="text" id="company-name" name="company-name" required>
+
+                <label for="contact-person">Contact Person:</label>
+                <input type="text" id="contact-person" name="contact-person" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+        </section>
+        <section id="post-job" class="section">
+            <h2>Post Job</h2>
+            <form>
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="description">Job Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <button type="submit">Post Job</button>
+            </form>
+        </section>
+        <section id="student-profiles" class="section students">
+            <h2>View Student Profiles</h2>
+            <div class="students-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Skills</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>(123) 456-7890</td>
+                            <td>Python, Java, HTML</td>
+                            <td><button type="button">View Profile</button></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>jane.smith@example.com</td>
+                            <td>(987) 654-3210</td>
+                            <td>Data Analysis, SQL, Excel</td>
+                            <td><button type="button">View Profile</button></td>
+                        </tr>
+                        <!-- Add more student profiles here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="shortlist" class="section">
+            <h2>Shortlist Candidates</h2>
+            <div class="shortlisted-list">
+                <ul>
+                    <li>John Doe - <button type="button">Shortlist</button></li>
+                    <li>Jane Smith - <button type="button">Shortlist</button></li>
+                    <!-- Add more shortlisted candidates here -->
+                </ul>
+            </div>
+        </section>
+        <section id="schedule-interviews" class="section">
+            <h2>Schedule Interviews</h2>
+            <form>
+                <label for="candidate">Candidate:</label>
+                <select id="candidate" name="candidate">
+                    <option value="john_doe">John Doe</option>
+                    <option value="jane_smith">Jane Smith</option>
+                    <!-- Add more candidates here -->
+                </select>
+
+                <label for="job">Job Title:</label>
+                <select id="job" name="job">
+                    <option value="software_engineer">Software Engineer</option>
+                    <option value="data_analyst">Data Analyst</option>
+                    <!-- Add more job titles here -->
+                </select>
+
+                <label for="date">Interview Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Interview Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="submit">Schedule</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 HiredU. All rights reserved.</p>
+    </footer>
+</body>
+</html>
