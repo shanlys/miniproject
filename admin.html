@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Page</title>
+    <title>Admin Dashboard</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,49 +18,78 @@
             padding: 20px;
             text-align: center;
         }
-        header nav {
-            margin-top: 10px;
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #3e4684; /* Dark blue navigation bar */
+            padding: 10px 0;
         }
-        header nav a {
+        nav a {
             color: #fff;
+            padding: 10px 15px;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
         }
-        header nav a:hover {
-            text-decoration: underline;
+        nav a:hover {
+            background-color: #2c325d; /* Darker blue for active link */
         }
         .container {
             padding: 20px;
             max-width: 800px;
             margin: 0 auto;
         }
-        .resources-section {
+        .section {
             margin: 20px 0;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 255, 0.1); /* Blue shadow */
         }
-        .resources-section h2 {
+        .section h2 {
             color: #182848; /* Dark blue heading */
             margin-bottom: 10px;
         }
-        .resources-section ul {
+        .section ul {
             list-style-type: none;
             padding: 0;
         }
-        .resources-section li {
+        .section li {
             margin: 10px 0;
             padding: 10px;
+            background-color: #f9f9f9; /* Light grey background for list items */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.1); /* Blue shadow */
+        }
+        .section input, .section textarea, .section select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .section button {
+            background-color: #182848; /* Dark blue button */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .section button:hover {
+            background-color: #2c325d; /* Darker blue for button hover */
+        }
+        .management table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .management th, .management td {
+            padding: 10px;
+            text-align: left;
             border-bottom: 1px solid #ccc;
         }
-        .resources-section a {
-            color: #182848; /* Dark blue links */
-            text-decoration: none;
-        }
-        .resources-section a:hover {
-            text-decoration: underline;
+        .section.large-padding {
+            padding: 60px; /* Increased padding for large-padding class */
         }
         footer {
             background-color: #182848; /* Dark blue footer */
@@ -75,46 +104,84 @@
 </head>
 <body>
     <header>
-        <h1>Career Resources</h1>
-        <nav>
-            <a href="#resume-templates">Resume Templates</a>
-            <a href="#interview-tips">Interview Tips</a>
-            <a href="#career-articles">Career Advice Articles</a>
-            <a href="#external-resources">External Resources</a>
-        </nav>
+        <h1>Admin Dashboard</h1>
     </header>
+    <nav>
+        <a href="#user-management">User Management</a>
+        <a href="#job-postings">Job Postings</a>
+        <a href="#approve-profiles">Approve Profiles</a>
+        <a href="#system-management">System Management</a>
+    </nav>
     <div class="container">
-        <section id="resume-templates" class="resources-section">
-            <h2>Resume Templates</h2>
+        <section id="user-management" class="section">
+            <h2>User Management</h2>
+            <form>
+                <label for="search-user">Search User:</label>
+                <input type="text" id="search-user" name="search-user" placeholder="Enter username or email">
+                <button type="submit">Search</button>
+            </form>
             <ul>
-                <li><a href="resume-template-1.docx" download>Resume Template 1</a></li>
-                <li><a href="resume-template-2.docx" download>Resume Template 2</a></li>
-                <li><a href="resume-template-3.docx" download>Resume Template 3</a></li>
+                <li>User1 - <button type="button">Edit</button> <button type="button">Delete</button></li>
+                <li>User2 - <button type="button">Edit</button> <button type="button">Delete</button></li>
+                <!-- Add more users here -->
             </ul>
         </section>
-        <section id="interview-tips" class="resources-section">
-            <h2>Interview Tips</h2>
+        <section id="job-postings" class="section">
+            <h2>Job Postings</h2>
+            <form>
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title" required>
+
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="description">Job Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <button type="submit">Post Job</button>
+            </form>
+            <table class="management">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>Tech Corp</td>
+                        <td>New York, NY</td>
+                        <td><button type="button">Edit</button> <button type="button">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Data Analyst</td>
+                        <td>Data Inc</td>
+                        <td>San Francisco, CA</td>
+                        <td><button type="button">Edit</button> <button type="button">Delete</button></td>
+                    </tr>
+                    <!-- Add more job postings here -->
+                </tbody>
+            </table>
+        </section>
+        <section id="approve-profiles" class="section">
+            <h2>Approve Student Profiles</h2>
             <ul>
-                <li><a href="interview-tips.pdf" download>Top 10 Interview Tips</a></li>
-                <li><a href="common-interview-questions.pdf" download>Common Interview Questions</a></li>
-                <li><a href="virtual-interview-tips.pdf" download>Virtual Interview Tips</a></li>
+                <li>John Doe - <button type="button">Approve</button> <button type="button">Reject</button></li>
+                <li>Jane Smith - <button type="button">Approve</button> <button type="button">Reject</button></li>
+                <!-- Add more profiles here -->
             </ul>
         </section>
-        <section id="career-articles" class="resources-section">
-            <h2>Career Advice Articles</h2>
-            <ul>
-                <li><a href="article-1.html">How to Choose the Right Career Path</a></li>
-                <li><a href="article-2.html">5 Ways to Improve Your LinkedIn Profile</a></li>
-                <li><a href="article-3.html">Networking Tips for Career Success</a></li>
-            </ul>
-        </section>
-        <section id="external-resources" class="resources-section">
-            <h2>External Resources</h2>
-            <ul>
-                <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
-                <li><a href="https://www.indeed.com" target="_blank">Indeed</a></li>
-                <li><a href="https://www.glassdoor.com" target="_blank">Glassdoor</a></li>
-            </ul>
+        <section id="system-management" class="section large-padding">
+            <h2>System Management</h2>
+            <button type="button">Backup Database</button>
+            <button type="button">Restore Database</button>
+            <button type="button">View System Logs</button>
         </section>
     </div>
     <footer>
