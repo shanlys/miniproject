@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #182848;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .faq-section {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-section h2 {
+            color: #182848;
+        }
+        .faq-item {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .faq-item h3 {
+            margin: 0;
+            color: #182848;
+            cursor: pointer;
+        }
+        .faq-item p {
+            margin: 5px 0;
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var faqItems = document.querySelectorAll('.faq-item h3');
+            faqItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    var content = this.nextElementSibling;
+                    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+    </header>
+    <div class="container">
+        <section class="faq-section">
+            <h2>General Questions</h2>
+            <div class="faq-item">
+                <h3>What is the Placement Management System?</h3>
+                <p>The Placement Management System is a platform designed to help students, employers, and administrators manage the college placement process efficiently. It offers features like job listings, application tracking, interview scheduling, and more.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Who can use the Placement Management System?</h3>
+                <p>The system can be used by students, employers, and administrators of XYZ College. Each user type has specific functionalities tailored to their needs.</p>
+            </div>
+        </section>
+        <section class="faq-section">
+            <h2>Student FAQs</h2>
+            <div class="faq-item">
+                <h3>How do I create a profile?</h3>
+                <p>To create a profile, log in to the system and navigate to the 'Student Dashboard'. From there, you can fill out your personal information, upload your resume, and add any other relevant details.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I apply for jobs?</h3>
+                <p>After logging in, go to the 'Job Listings' page. Browse through the available job opportunities and click on the 'Apply' button for the jobs you are interested in. Make sure your profile is complete before applying.</p>
+            </div>
+        </section>
+        <section class="faq-section">
+            <h2>Employer FAQs</h2>
+            <div class="faq-item">
+                <h3>How do I post a job?</h3>
+                <p>Employers can post jobs by logging in and navigating to the 'Employer Dashboard'. Click on 'Post a Job' and fill out the necessary details about the job position. Once submitted, the job listing will be visible to students.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I view student profiles?</h3>
+                <p>Employers can view student profiles by going to the 'Student Profiles' section in the 'Employer Dashboard'. Here, you can search and view profiles of students who have applied for your job listings or browse through all available profiles.</p>
+            </div>
+        </section>
+        <section class="faq-section">
+            <h2>Administrator FAQs</h2>
+            <div class="faq-item">
+                <h3>How do I manage users?</h3>
+                <p>Administrators can manage users by logging in and navigating to the 'Admin Dashboard'. From there, you can view, edit, and delete user accounts, as well as approve or reject student profiles.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I manage job postings?</h3>
+                <p>Job postings can be managed from the 'Admin Dashboard'. Administrators can view all job listings, edit details, and remove listings if necessary.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 XYZ College Placement System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
