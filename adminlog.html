@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dde5f4; /* Light blue background */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        header {
+            background-color: #182848; /* Dark blue header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #3e4684; /* Dark blue navigation bar */
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #2c325d; /* Darker blue for active link */
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.1); /* Blue shadow */
+        }
+        .section h2 {
+            color: #182848; /* Dark blue heading */
+            margin-bottom: 10px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9; /* Light grey background for list items */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.1); /* Blue shadow */
+        }
+        .section input, .section textarea, .section select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .section button {
+            background-color: #182848; /* Dark blue button */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .section button:hover {
+            background-color: #2c325d; /* Darker blue for button hover */
+        }
+        .management table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .management th, .management td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        .section.large-padding {
+            padding: 60px; /* Increased padding for large-padding class */
+        }
+        footer {
+            background-color: #182848; /* Dark blue footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <nav>
+        <a href="#user-management">User Management</a>
+        <a href="#job-postings">Job Postings</a>
+        <a href="#approve-profiles">Approve Profiles</a>
+        <a href="#system-management">System Management</a>
+    </nav>
+    <div class="container">
+        <section id="user-management" class="section">
+            <h2>User Management</h2>
+            <form>
+                <label for="search-user">Search User:</label>
+                <input type="text" id="search-user" name="search-user" placeholder="Enter username or email">
+                <button type="submit">Search</button>
+            </form>
+            <ul>
+                <li>User1 - <button type="button">Edit</button> <button type="button">Delete</button></li>
+                <li>User2 - <button type="button">Edit</button> <button type="button">Delete</button></li>
+                <!-- Add more users here -->
+            </ul>
+        </section>
+        <section id="job-postings" class="section">
+            <h2>Job Postings</h2>
+            <form>
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title" required>
+
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="description">Job Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <button type="submit">Post Job</button>
+            </form>
+            <table class="management">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>Tech Corp</td>
+                        <td>New York, NY</td>
+                        <td><button type="button">Edit</button> <button type="button">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Data Analyst</td>
+                        <td>Data Inc</td>
+                        <td>San Francisco, CA</td>
+                        <td><button type="button">Edit</button> <button type="button">Delete</button></td>
+                    </tr>
+                    <!-- Add more job postings here -->
+                </tbody>
+            </table>
+        </section>
+        <section id="approve-profiles" class="section">
+            <h2>Approve Student Profiles</h2>
+            <ul>
+                <li>John Doe - <button type="button">Approve</button> <button type="button">Reject</button></li>
+                <li>Jane Smith - <button type="button">Approve</button> <button type="button">Reject</button></li>
+                <!-- Add more profiles here -->
+            </ul>
+        </section>
+        <section id="system-management" class="section large-padding">
+            <h2>System Management</h2>
+            <button type="button">Backup Database</button>
+            <button type="button">Restore Database</button>
+            <button type="button">View System Logs</button>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; HireLing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
